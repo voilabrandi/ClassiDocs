@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #d9d9d9; /* light background for the page */
+  color: #111; /* dark text for readability */
+}
+
+.page {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Main logo styling (large and bold for emphasis) */
+.logo {
+  font-size: 72px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.logo-black {
+  color: #000;
+}
+
+.logo-blue {
+  color: #0b6fb8;
+}
+
+.instructions {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+textarea {
+  width: 100%;
+  max-width: 600px;
+  height: 140px;
+  padding: 12px;
+  font-size: 18px;
+  border: 2px solid black;
+  resize: vertical;
+  margin-bottom: 24px;
+  background: #fff;
+  color: #111;
+}
+
+/* Container for file upload */
+.upload-box {
+  border: 2px solid black;
+  padding: 30px;
+  margin: 0 auto 24px auto;
+  max-width: 600px;
+  background: #f5f5f5;
+}
+
+.upload-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.upload-note {
+  margin-top: 10px;
+  color: #222;
+}
+/* Classify button */
+button {
+  background: #0b6fb8;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  padding: 16px 40px;
+  cursor: pointer;
+}
+
+/* visual feedback on hover */
+button:hover {
+  opacity: 0.9;
+}
+
+/* Accessibility: visible focus outline */
+button:focus,
+textarea:focus,
+input:focus {
+  outline: 3px solid #000;
+  outline-offset: 3px;
+}
+
+/* Container for classification results */
+.results-box {
+  border: 2px solid black;
+  padding: 30px;
+  min-height: 250px;
+  text-align: left;
+  background: #f5f5f5;
+  margin-bottom: 24px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Error message styling */
+.error {
+  color: #8b0000; /* dark red text */
+  background: #ffe6e6; /* light red background */
+  border: 1px solid #8b0000;
+  padding: 12px;
+  margin-top: 16px;
+  font-weight: bold;
+}

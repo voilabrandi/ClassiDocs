@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+   <!-- Ensures responsive design on different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Page title-->
+  <title>ClassiDocs</title>
+  <!-- Link stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Main content container -->
+  <main class="page">
+
+     <!-- Application logo  -->
+    <h1 class="logo">
+      <span class="logo-black">Classi</span><span class="logo-blue">Docs</span>
+    </h1>
+
+    <!-- Instructions for the user -->
+    <p id="formInstructions" class="instructions">
+      Enter research text directly or upload a file to classify its methodology.
+    </p>
+    <!-- Label for accessibility and clarity -->
+    <label for="textInput">Enter research text</label>
+
+    <!-- Text area for user input -->
+    <textarea
+      id="textInput"
+      placeholder="Enter text to analyze..."
+      aria-describedby="formInstructions"
+    ></textarea>
+
+    <!-- File upload section -->
+    <div class="upload-box">
+      <label for="fileInput" class="upload-title">Upload File</label>
+      
+      <!-- File input -->
+      <input
+        type="file"
+        id="fileInput"
+        accept=".txt,.pdf"
+        aria-describedby="formInstructions uploadNote"
+      />
+      <p id="uploadNote" class="upload-note">Supported: .txt, .pdf</p>
+    </div>
+     <!-- Clasify Button -->
+    <button id="classifyBtn" type="button">Classify</button>
+        <!-- Loading indicator -->
+    <div id="loader" class="hidden" aria-live="polite">Analyzing...</div>
+    <!-- Error message container  -->
+    <div id="errorBox" class="error hidden" aria-live="assertive"></div>
+  </main>
+
+   <!-- Link to JavaScript f -->
+  <script src="script.js"></script>
+</body>
+
+</html>

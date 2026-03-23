@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!-- Page title-->
+  <title>ClassiDocs Results</title>
+  <!-- Link stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Main content container -->
+  <main class="page">
+
+    <!-- Application logo  -->
+    <h1 class="logo">
+      <span class="logo-black">Classi</span><span class="logo-blue">Docs</span>
+    </h1>
+
+    <!-- Application logo  -->
+    <section class="results-box">
+      <h2>Results</h2>
+
+      <!-- Methodology prediction output -->
+      <p><strong>Methodology Prediction:</strong> <span id="methodologyPrediction">No result</span></p>
+      <p><strong>Methodology Confidence:</strong> <span id="methodologyConfidence">N/A</span></p>
+
+      <!-- Domain prediction output -->
+      <p><strong>Domain Prediction:</strong> <span id="domainPrediction">No result</span></p>
+      <p><strong>Domain Confidence:</strong> <span id="domainConfidence">N/A</span></p>
+
+      <!-- File information (if a file was uploaded) -->
+      <div id="fileInfo" class="file-info hidden">
+        <p><strong>File:</strong> <span id="filename"></span></p>
+      </div>
+
+      <div id="previewBox" class="preview-box hidden">
+        <h3>Extracted Text Preview</h3>
+        <p id="textPreview"></p>
+      </div>
+    </section>
+    <!-- Navigation button to return to main page -->
+    <button id="backBtn">Back</button>
+  </main>
+
+  <script>
+    const result = JSON.parse(localStorage.getItem("classidocs_result") || "{}");
+
+    //Display results
+    document.getElementById("methodologyPrediction").textContent =
+      result.methodology_prediction || "No result";
+
+    document.getElementById("methodologyConfidence").textContent =
+      result.methodology_confidence ?? "N/A";
+
+    document.getElementById("domainPrediction").textContent =
+      result.domain_prediction || "No result";
+
+    document.getElementById("domainConfidence").textContent =
+      result.domain_confidence ?? "N/A";
+
+    //Get file info
+    if (result.filename) {
+      document.getElementById("fileInfo").classList.remove("hidden");
+      document.getElementById("filename").textContent = result.filename;
+    }
+
+    if (result.extracted_text_preview) {
+      document.getElementById("previewBox").classList.remove("hidden");
+      document.getElementById("textPreview").textContent = result.extracted_text_preview;
+    }
+
+    //Navigation
+    document.getElementById("backBtn").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
